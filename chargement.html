@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargement en cours...</title>
+    <style>
+        /* Ajoutez ici vos styles CSS personnalisés */
+    </style>
+</head>
+<body>
+    <div class="loading-wrapper">
+        <img src="nui/loadingscreen.png" alt="Chargement en cours...">
+        <div class="loading-text">Chargement en cours...</div>
+        <button onclick="chargementTermine()">Chargement terminé</button>
+    </div>
+    <script>
+        function chargementTermine() {
+            // Envoyez un message pour signaler que le chargement est terminé
+            fetch(`https://github.com/HamzzzDev/monchargementtermine.git`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            });
+        }
+    </script>
+</body>
+</html>
